@@ -48,7 +48,7 @@ class Warehouse
   private
   def set_city(city)
     raise ArgumentError unless city.is_a?(String)
-    raise ArgumentError if city.length <= 3
+    raise ArgumentError if city.length < 3
     city
   end
 

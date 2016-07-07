@@ -44,16 +44,22 @@ RSpec.describe Product do
       }.to raise_error(ArgumentError)
     end
 
-     it "must be numeric" do
-       expect{
+    it "must be numeric" do
+      expect{
         Product.new(name: "Book", price: "price", vat: 0.23).price
       }.to raise_error(ArgumentError)
     end
   end
 
-   context "#vat" do
-     it "returns proper value" do
-       expect(product.vat).to eql(0.23)
+    context "#vat" do
+      it "returns proper value" do
+        expect(product.vat).to eql(0.23)
+      end
+
+      it "must be numeric" do
+        expect{
+          Product.new(name: "Book", price: 20, vat: "vat").vat
+        }.to raise_error(ArgumentError)
     end
   end
 

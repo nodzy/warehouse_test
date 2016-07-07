@@ -6,7 +6,7 @@ class Product
     @id = next_id
     @name = set_name(name)
     @price = set_price(price)
-    @vat = vat
+    @vat = set_vat(vat)
     @sale = sale
   end 
 
@@ -22,14 +22,19 @@ class Product
   private
   def set_name(name)
     raise ArgumentError unless name.is_a?(String)
-    raise ArgumentError if name.length <= 3
+    raise ArgumentError if name.length < 3
     name
   end
 
   def set_price(price)
     raise ArgumentError unless price.is_a?(Numeric)
-    raise ArgumentError if price < 0
+    raise ArgumentError if price <= 0
     price
+  end
+
+  def set_vat(vat)
+    raise ArgumentError unless vat.is_a?(Numeric)
+    vat
   end
   
   def next_id
