@@ -36,6 +36,11 @@ RSpec.describe Basket do
         5.times{ basket.add(product) }
       }.to_not raise_error(RangeError)
     end
+    
+    it "changes quantity in basket" do
+      3.times{ basket.add(product)}
+      expect(basket.products.count).to eql(3)
+    end
 
     it "changes quantity on hand" do
       3.times{ basket.add(product)}
