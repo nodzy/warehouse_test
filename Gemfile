@@ -1,7 +1,8 @@
-# frozen_string_literal: true
-# A sample Gemfile
-source "https://rubygems.org"
+source 'https://rubygems.org'
+
+# Web framework
+gem 'sinatra'
 
 group :test do
-  gem "rspec"
+  gem 'rspec'
 end
