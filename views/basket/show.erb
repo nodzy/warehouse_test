@@ -1,0 +1,27 @@
+<table border="2" width="100%">
+  <tr>
+    <th>Name</th>
+    <th>Price</th> 
+    <th>Quantity</th>
+	<th>Total price</th>
+	<th>Total price with VAT</th>
+  </tr>
+    <% basket.each do |b| %>
+  <tr>
+    <td><%= b.fetch_product.name %></td>
+    <td><%= Shop::Product.price_formatted(b.fetch_product.price) %></td>
+    <td><%= b.quantity %></td>
+    <td><%= Shop::Product.price_formatted(b.total_price) %></td>
+    <td><%= Shop::Product.price_formatted(b.total_price_with_vat) %></td>
+	<td>   <form action="/basket/<%=b.id%>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="hidden" name="id" value=<%= b.id %>>
+    <button type="submit">Delete</button>
+    </form></td>
+  </tr>
+   <% end %>
+    <td>Summary:</td>
+    <td><%= Shop::Product.price_formatted(basket.map(&:total_price_with_vat).reduce(:+))%></td>
+</table>
+
+

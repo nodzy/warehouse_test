@@ -1,0 +1,9 @@
+<h1><%= warehouse.fetch_product.name %></h1>
+<h1>Items in stock: <%= warehouse.quantity %></h1>
+<form action="/basket" method="post">
+  <input type="hidden" name="product_id" value=<%= warehouse.fetch_product.id %>>
+  <input type="number" name="quantity" value=1>
+  <input type="submit" value="Add to basket">
+</form>
+
+<a href="/">Home</a>

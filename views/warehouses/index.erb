@@ -1,0 +1,24 @@
+<h1><%= title %></h1>
+<table border="2" width="100%">
+  <tr>
+    <th>Product name</th>
+    <th>Price</th> 
+    <th>Prive with VAT</th>
+	<th>Quantity</th>
+  </tr>
+  <tr>
+    <% products.each do |product| %>
+         <td> <a href="/products/<%= product.id %>">
+         <%= product.fetch_product.name %>
+         </a></td>
+	     <td><%= Shop::Product.price_formatted(product.fetch_product.price) %>  </td>
+		 <td> <%= Shop::Product.price_formatted(product.fetch_product.price_with_vat) %> </td>
+         <td><%= product.quantity %></td>
+  </tr>
+<% end %>
+</table>
+
+
+
+
+
