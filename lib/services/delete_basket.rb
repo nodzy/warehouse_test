@@ -2,7 +2,7 @@ Dir['./lib/**/*.rb'].each { |file| require file }
 
 module Shop
   class DeleteBasket
-  attr_reader :id
+    attr_reader :id
 
     def initialize(params)
       @id = params.fetch('id').to_i
