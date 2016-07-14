@@ -1,0 +1,25 @@
+<table>
+  <tr>
+    <th> Name </th>
+    <th>Price</th>
+    <th>Price with vat</th>
+    <th>Description</th>
+    <th>Quantity in stock</th>
+  </tr>
+  <tr>
+    <td><%= product[:name] %></td>
+    <td><%= price %></td>
+    <td><%= price_with_vat %></td>
+    <td><%= product[:description] %></td>
+    <td><%= item_category[:count][:count] %></td>
+    <td>
+      <form action="/basket" method="post">
+        <input type="hidden" name="name" value=<%= product[:name] %>>
+        <input type="hidden" name="price" value=<%= product[:price] %>>
+        <input type="hidden" name="description" value=<%= product[:description] %>>
+        <input type="number" name="quantity" value=1>
+        <input type="submit" value="Add to basket">
+      </form>
+    </td>
+  </tr>
+</table>
