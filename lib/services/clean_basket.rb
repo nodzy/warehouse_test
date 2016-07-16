@@ -12,6 +12,6 @@ module Shop
         )
       end
       basket_items.delete
-      end
+    end
   end
 end
