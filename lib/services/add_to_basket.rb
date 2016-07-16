@@ -21,11 +21,9 @@ module Shop
             description: description
           )
         end
-
         quantity.times do
           Product.where(name: name).first.delete
         end
-
       end
     end
   end
