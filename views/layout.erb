@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/stylesheets/style.css"/>
+    <title>
+      Shop
+    </title>
+  </head>
+  <body>
+    <img id="logo" src="/images/shop.jpg"/>
+    <div id="icons">
+      <a href="/">
+      <img id="home-icon" src="/images/home.png"/>
+      </a> 
+      <a href="/basket">
+      <img id="basket-icon" src="/images/basket.png"/> 
+      </a>
+    </div>
+    <div id="flash">
+      <% if flash %>
+        <%= flash[:alert] %>
+      <% end %>
+    </div>
+    <%= yield %>
+  </body>
+</html>
