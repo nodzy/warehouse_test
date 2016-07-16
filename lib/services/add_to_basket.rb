@@ -2,6 +2,7 @@ require 'sequel'
 module Shop
   class AddToBasket
     attr_reader :name, :quantity, :price, :description
+    
     def initialize(params)
       @name = params.fetch('name')
       @quantity = params.fetch('quantity').to_i
