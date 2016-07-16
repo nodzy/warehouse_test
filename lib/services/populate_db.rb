@@ -3,6 +3,7 @@ module Shop
   class PopulateDatabase
     def call
       items = DB[:products]
+      
       5.times do
         items.insert(
           name: 'Book',
@@ -10,6 +11,7 @@ module Shop
           description: 'Very interesting book'
         )
       end
+      
       15.times do
         items.insert(
           name: 'Paper',
@@ -17,6 +19,7 @@ module Shop
           description: 'Great paper'
         )
       end
+      
       25.times do
         items.insert(
           name: 'Pen',
