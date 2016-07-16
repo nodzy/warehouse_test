@@ -25,7 +25,6 @@ module Shop
             description: description
           )
         end
-
       end
     end
   end
